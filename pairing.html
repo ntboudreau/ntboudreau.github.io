@@ -97,13 +97,23 @@
             .title {
                 font-size: 30px;
             }
+			
+			.instructions {
+				margin-bottom: 10px;
+				font-size: 30px;
+			}	
+			
+			.questions {
+				margin-bottom:5px;
+			}
 
             #pairing-name {
                 font-size: 90px;
-            }
+				padding-bottom: 10px; 
+			}	
 
-            #pairing-details {
-                margin-bottom: 20px;
+            .pairing-details {
+                margin-bottom: 10px;
 
                 font-size: 20px;
             }
@@ -153,19 +163,32 @@
 
                     <div class="pairing">
                         <div id="pairing-name"></div>
-                        <div id="pairing-details"></div>
+                        <div class="pairing-details" id="pairing-details1"></div>
+						<div class="pairing-details" id="pairing-details2"></div>
+						<div class="pairing-details" id="pairing-details3"></div>
+						<div class="pairing-details" id="pairing-details4"></div>
                         <script>
                             document.getElementById('pairing-name').innerText = pairingDefinition[1];
 
                             if (pairingDefinition[2]) {
-                                document.getElementById('pairing-details').innerText = pairingDefinition[2];
+                                document.getElementById('pairing-details1').innerText = "Team: " + pairingAttributes[0];
+								document.getElementById('pairing-details2').innerText = "Listens to music on: " + pairingAttributes[1];
+								document.getElementById('pairing-details3').innerText = "Likes: " + pairingAttributes[2];
+								document.getElementById('pairing-details4').innerText = "Dislikes: " + pairingAttributes[3];
                             } else {
                                 document.getElementById('pairing-details').style.display = 'none';
                             }
                         </script>
                     </div>
 
-                    <div class="title">Have fun!</div>
+                    <div class="instructions">Playlists should be at least 7 songs. <br /> Our exchange will be on Friday Dec 22nd.</div>
+					
+					<div class="questions">
+						Not sure how to share your playlist? <a href="https://www.qr-code-generator.com/"> Generate a QR Code here!</a>
+					</div>
+					<div class="questions">
+						Questions? Need help? Not sure what to do? Ask Nicole!
+					</div>
 
                     <script>
                         if (queryString.extra) {
