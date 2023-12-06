@@ -275,6 +275,7 @@
           for ( var t = 0, T = names.length; t < T; ++ t ) {
 
               var name = names[ t ];
+			  var displayName = names[ t ].replace( /\((.+)\)/g, ' ' ).trim();
               var prettyName = names[ t ].replace( /\([^)]+\)/g, ' ' ).replace( / +/g, ' ' ).trim();
 
               var tr = document.createElement( 'tr' );
@@ -301,7 +302,7 @@
               if ( isAmazonEnabled() )
                   pairingQueryString += '&extra=1';
 
-              tdName.innerText = name;
+              tdName.innerText = displayName;
 
               link.addEventListener( 'click', protect );
               link.setAttribute( 'data-name', name );
