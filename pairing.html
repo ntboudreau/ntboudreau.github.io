@@ -135,6 +135,7 @@
 
             var pairing = CryptoJS.AES.decrypt( queryString.pairing, queryString.key ).toString(CryptoJS.enc.Utf8);
             var pairingDefinition = pairing.match( /^([^(]+)(?: (\([^)]+\)))?$/ );
+			var pairingAttributes = pairing.match( /\((.+)\)/ )[1].split(',');
 
         </script>
 
@@ -147,7 +148,7 @@
             <div class="wrapper">
                 <div class="content">
 
-                    <div class="title">Hi <span id="name"></span>! You've been paired with</div>
+                    <div class="title">Hi <span id="name"></span>! You are making a playlist for</div>
                     <script>document.getElementById('name').innerText = name</script>
 
                     <div class="pairing">
@@ -164,7 +165,7 @@
                         </script>
                     </div>
 
-                    <div class="title">Good luck!</div>
+                    <div class="title">Have fun!</div>
 
                     <script>
                         if (queryString.extra) {
